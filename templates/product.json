@@ -1,8 +1,10 @@
 {
   "sections": {
-
+    "hello": {
+      "type": "hello"
+    }
   },
   "order": [
-    
+    "hello"
   ]
 }
