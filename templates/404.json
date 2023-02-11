@@ -1,10 +1,12 @@
 {
   "sections": {
-    "hello": {
-      "type": "hello"
+    "main": {
+      "type": "main-404",
+      "settings": {
+      }
     }
   },
   "order": [
-    "hello"
+    "main"
   ]
 }
