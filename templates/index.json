@@ -1,6 +1,8 @@
 {
   "sections": {
-    "type": "hello"
+    "hello": {
+      "type": "hello"
+    }
   },
   "order": [
     "hello"
