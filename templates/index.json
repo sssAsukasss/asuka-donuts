@@ -1,10 +1,14 @@
 {
   "sections": {
-    "hello": {
-      "type": "hello"
+    "product-list": {
+      "type": "product-list"
+    },
+    "hero": {
+      "type": "hero"
     }
   },
   "order": [
-    "hello"
+    "hero",
+    "product-list"
   ]
 }
