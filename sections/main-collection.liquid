@@ -1,0 +1,20 @@
+<section class="max-w-3xl mx-auto h-screen bg-rose-300 text-center">
+  <p>main collection</p>
+  <h3>{{ collection.title }}</h3>
+  <p>{{ collection.description }}</p>
+  
+  {% paginate collection.products by 3 %}
+  <div class="grid grid-cols-2 gap-4">
+    {% for product in collection.products %}
+    <div class="m-4 bg-yellow-100 rounded-2xl drop-shadow-sm">
+      <a href="{{ product.url }}">
+        <h3>{{ product.title }}</h3>
+        <p>{{ product.description }}</p>
+        <img src="{{ product.featured_image | img_url }}" alt="" class="p-4 w-full h-64 object-cover ">
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+    {{ paginate | default_pagination }}
+  {% endpaginate %}
+</section>
