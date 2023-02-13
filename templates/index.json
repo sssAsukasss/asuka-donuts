@@ -5,14 +5,14 @@
       "settings": {
       }
     },
-    "hero": {
-      "type": "hero",
+    "product": {
+      "type": "main-product",
       "settings": {
       }
     }
   },
   "order": [
-    "hero",
+    "product",
     "product-list"
   ]
 }

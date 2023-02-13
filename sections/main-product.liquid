@@ -1,0 +1,6 @@
+<p>main-product</p>
+
+<h3 class="text-2xl font-bold">{{ product.title }}</h3>
+<h4>{{ product.description }}</h4>
+<p>{{ product.price | money_without_trailing_zeros }}</p>
+<img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}">
