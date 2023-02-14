@@ -1,15 +1,44 @@
 <div class="bg-lime-300">
-  <h4>Featured Collection</h4>
-  <p>ドーナツコレクション</p>
+  <h4>{{ section.settings.title }}</h4>
+  <p>{{ section.settings.subtitle }}</p>
+  <img src="{{ section.settings.image | img_url: 'medium' }}">
+  <div>{{ section.settings.customhtml }}</div>
 </div>
+
+<!-- 型定義 -->
+<!--presetsは再利用可能にするやつ-->
 {% schema %}
 {
   "name": "featured-collection",
-  "settings": [{
-    "id": "title",
-    "type": "text",
-    "label": "title-text",
-    "default": "featured-collection"
-  }]
+  "settings": [
+    {
+      "id": "title",
+      "type": "text",
+      "label": "title-text",
+      "default": "featured-collection"
+    },
+    {
+      "id": "subtitle",
+      "type": "text",
+      "label": "subtitle-text",
+      "default": "ドーナツコレクション"
+    },
+    {
+      "id": "image",
+      "type": "image_picker",
+      "label": "image"
+    },
+    {
+      "id": "customhtml",
+      "type": "html",
+      "label": "カスタムHTML",
+      "default": "<div><p>デフォルトのHTML要素</p></div>"
+    }
+  ],
+  "presets": [
+    {
+      "name": "featured-collection"
+    }
+  ]
 }
 {% endschema %}
