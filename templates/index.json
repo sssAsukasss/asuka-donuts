@@ -1,5 +1,8 @@
 {
   "sections": {
+    "featured-collection": {
+      "type": "featured-collection"
+    },
     "product-list": {
       "type": "product-list",
       "settings": {
@@ -12,6 +15,7 @@
     }
   },
   "order": [
+    "featured-collection",
     "hero",
     "product-list"
   ]
