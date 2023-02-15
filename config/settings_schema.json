@@ -1,7 +1,7 @@
 [
   {
     "name": "theme_info",
-    "theme_name": "Asuka-Donuts template theme",
+    "theme_name": "Asuka-Donuts theme",
     "theme_version": "1.0.0",
     "theme_author": "Asuka",
     "theme_documentation_url": "https://github.com/sssAsukasss/asuka-donuts",
@@ -15,6 +15,17 @@
         "id": "navbar_color",
         "label": "NavBar Background Color",
         "default": "#000"
+      }
+    ]
+  },
+  {
+    "name": "title text",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title_text",
+        "label": "title text",
+        "default": "title goes here"
       }
     ]
   }
