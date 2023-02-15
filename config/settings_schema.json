@@ -11,10 +11,10 @@
     "name": "Navigational Bar Colors Setting",
     "settings": [
       {
-        "type": "color",
-        "id": "navbar_color",
-        "label": "NavBar Background Color",
-        "default": "#000"
+        "type": "text",
+        "id": "main_color",
+        "label": "main color",
+        "default": "blue-300"
       }
     ]
   },
