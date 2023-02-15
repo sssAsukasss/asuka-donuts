@@ -1,15 +1,21 @@
 {
   "sections": {
     "featured-collection": {
-      "type": "featured-collection"
-    },
-    "product-list": {
-      "type": "product-list",
+      "type": "featured-collection",
       "settings": {
+        "title": "featured-collection",
+        "subtitle": "ドーナツコレクション",
+        "image": "shopify:\/\/shop_images\/donut1.jpg",
+        "customhtml": "<div><p>デフォルトのHTML要素<\/p><\/div>"
       }
     },
     "hero": {
       "type": "hero",
+      "settings": {
+      }
+    },
+    "product-list": {
+      "type": "product-list",
       "settings": {
       }
     }
