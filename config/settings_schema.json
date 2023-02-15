@@ -4,8 +4,8 @@
     "theme_name": "Asuka-Donuts theme",
     "theme_version": "1.0.0",
     "theme_author": "Asuka",
-    "theme_documentation_url": "https:\/\/github.com\/sssAsukasss\/asuka-donuts",
-    "theme_support_url": "https:\/\/github.com\/sssAsukasss\/asuka-donuts"
+    "theme_documentation_url": "https://github.com/sssAsukasss/asuka-donuts",
+    "theme_support_url": "https://github.com/sssAsukasss/asuka-donuts"
   },
   {
     "name": "Navigational Bar Colors Setting",
@@ -15,6 +15,17 @@
         "id": "navbar_color",
         "label": "NavBar Background Color",
         "default": "#000"
+      }
+    ]
+  },
+  {
+    "name": "title text",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title_text",
+        "label": "title text",
+        "default": "title goes here"
       }
     ]
   }
