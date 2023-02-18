@@ -1,17 +1,51 @@
 <p>main-product</p>
 
-<div class="grid grid-cols-2 gap-4">
-  <img 
-    src="{{ product.featured_image | img_url: 'medium' }}" 
-    alt="{{ product.title }}"
-    class="w-6/12"
-  >
+<div class="m-8 text-center sm:m-16 md:m-24">
   
-  <!-- right side -->
-  <div>
-    <h3 class="title-text text-2xl font-bold">{{ product.title }}</h3>
-    <h4>{{ product.description }}</h4>
-    <p>{{ product.price | money_without_trailing_zeros }}</p>
-    <button id="btn">カート</button>
+  <!-- product-top -->
+  <div class="text-start sm:grid sm:grid-cols-2 gap-4">
+    <!-- {% assign imgLinks = "aaa, bbb, ccc" | split: ", " %} -->
+    <!-- {% assign imgLinks = product.images %} -->
+    <img 
+      src="{{ product.featured_image | img_url: 'medium' }}" 
+      alt="{{ product.title }}"
+      class="mx-auto w-full"
+    >
+
+    <div>
+      <h3 class="title-text text-2xl font-bold">{{ product.title }}</h3>
+      <p>{{ product.price | money_without_trailing_zeros }}</p>
+      <button id="btn" class="py-2 px-4 text-white bg-pink-400">カート</button>
+    </div>
+  </div>
+
+  <!-- images -->
+  <div class="my-8 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
+    {% for imgLink in product.images  %}
+      <div class="w-full aspect-w-1 aspect-h-1">
+        <img
+         src="{{ imgLink | img_url: 'medium' }}"
+         class="object-cover"
+        >
+      </div>
+    {% endfor %}
+  </div>
+
+  <!-- descriptions -->
+  <div class="text-start sm:grid sm:grid-cols-2 sm:gap-4">
+    <div class="my-8">
+      <h3 class="text-xl font-bold">商品説明</h3>
+      <p>{{ product.description }}</p>
+    </div>
+  
+    <div class="my-8">
+      <h3 class="text-xl font-bold">店長コメント</h3>
+      <p>{{ product.metafields.custom.manager_comment }}</p>
+    </div>
+
+    <div class="my-8">
+      <h3 class="text-xl font-bold">ユーザースコア</h3>
+      <p>{{ product.metafields.custom.score }}</p>
+    </div>
   </div>
 </div>
