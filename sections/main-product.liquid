@@ -4,18 +4,47 @@
   
   <!-- product-top -->
   <div class="text-start sm:grid sm:grid-cols-2 gap-4">
-    <!-- {% assign imgLinks = "aaa, bbb, ccc" | split: ", " %} -->
-    <!-- {% assign imgLinks = product.images %} -->
+
+
+    <!-- left side -->
     <img 
       src="{{ product.featured_image | img_url: 'medium' }}" 
       alt="{{ product.title }}"
       class="mx-auto w-full"
     >
 
+    <!-- right side -->
     <div>
       <h3 class="title-text text-2xl font-bold">{{ product.title }}</h3>
       <p>{{ product.price | money_without_trailing_zeros }}</p>
-      <button id="btn" class="py-2 px-4 text-white bg-pink-400">カート</button>
+      {% form "product", product %}
+        <div class="grid grid-cols-2">
+          <div class="bg-amber-50">トッピング</div>
+          <div class="bg-amber-50">
+            <select name="id" id="productSelect">
+              {% for topping in product.variants %}
+              {% if topping.available %}
+              <option value="{{ topping.id }}">
+                {{ topping.title }}  
+              </option>
+              {% else %}
+              <option value="{{ topping.id }}" disabled>
+                {{ topping.title }}  
+              </option>
+              {% endif %}
+              {% endfor %}
+            </select>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2">
+          <div class="bg-amber-50">数量</div>
+          <div class="bg-amber-50">
+            <input type="number" name="quantity" id="quantity" value="1" min="1" max="5">
+          </div>
+        </div>
+          <button type="submit" name="add" id="btn" value="Add to cart" class="block w-full py-2 px-4 text-white bg-pink-400 hover:bg-pink-300 duration-200">カートに追加</button>
+      {% endform %}
     </div>
   </div>
 
