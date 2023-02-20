@@ -1,0 +1,46 @@
+<div class="p-8">
+{% if cart != empty %}
+  <form action="{{ routes.cart_url }}" method="POST">
+    <table class="w-full mx-auto max-w-5xl table-auto text-center">
+      <thead class="bg-gray-300">
+        <tr>
+          <th>商品</th>
+          <th>数量</th>
+          <th>合計</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in cart.items %}
+        <tr id="CartItem-{{ item.index | plus: 1 }}" class="border border-b-2">
+          <td>
+            <div class="flex items-center justify-start">
+              <img
+                src="{{ item.image | img_url: 'medium' }}"
+                alt=""
+                class="w-24 h-24 p-4 object-cover"
+              />
+              <p>{{ item.title }}</p>
+            </div>
+          </td>
+          <td class="">
+            {{ item.quantity }}
+            <a href="{{ item.url_to_remove }}">
+              {% render 'trash-button' %}
+            </a>
+          </td>
+          <td>{{ item.original_line_price | money }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <p class="mt-4">
+      <span class="pr-4">合計金額</span>
+      {{ cart.total_price | money }}
+    </p>
+    <input type="submit" name="checkout" value="お会計へ進む" class="mt-4 bg-yellow-200 hover:bg-yellow-100 p-4 rounded-lg duration-200" />
+  </form>
+{% else %}
+  <p>空です</p>
+{% endif %}
+
+</div>
